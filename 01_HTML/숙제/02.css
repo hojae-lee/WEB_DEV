@@ -1,0 +1,74 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, li, table, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    color: #999;
+    padding: 10px;
+}
+
+header div {
+    display: flex;
+    gap: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+main {
+    margin: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+thead {
+    background-color: #fff;
+}
+
+div label {
+    margin-right: 10px;
+}
+
+input {
+    padding: 5px;
+}
+
+button {
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
