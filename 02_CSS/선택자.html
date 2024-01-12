@@ -60,6 +60,74 @@
             color: #FFFF00;
             font-size: 50px;
         }
+
+        /* 상태 선택자 */
+        a:hover {
+            color: green;
+        }
+
+        input:focus {
+            border: 2px solid blue;
+        }
+
+        /* 가상 요소 선택자 */
+        p::before {
+            content: "Before text: ";
+            color: red;
+        }
+
+        p::after {
+            content: " After text.";
+            color: blue;
+        }
+
+        /* 속성 선택자 */
+        input[type="text"] {
+            border: 1px solid #ccc;
+        }
+
+        a[href^="https"] {
+            color: blue;
+        }
+
+        /* 구조적 가상 클래스 선택자 */
+        li:first-child {
+            color: red;
+        }
+
+        li:nth-child(2n) {
+            background-color: #f2f2f2;
+        }
+
+        /* 비어 있는 선택자 */
+        p:empty {
+            color: gray;
+        }
+
+        /* 목적지 선택자 */
+        :target {
+            background-color: yellow;
+        }
+
+        /* 활성화된 선택자 */
+        input:enabled {
+            border: 2px solid green;
+        }
+
+        /* 비활성화된 선택자 */
+        input:disabled {
+            background-color: #ddd;
+        }
+
+        /* 체크된 선택자 */
+        input:checked {
+            border: 2px solid blue;
+        }
+
+        /* 인접 형제 선택자 */
+        h2 + p {
+            font-style: italic;
+        }
     </style>
     <title>CSS 선택자 예제</title>
 </head>
@@ -92,5 +160,42 @@
         <li class="myclass">Football</li>
         <li><span class="myclass">Volleyball</span></li>
     </ul>
+
+    <!-- 상태 선택자 -->
+    <a href="#">Hover over me</a>
+
+    <!-- 가상 요소 선택자 -->
+    <p></p>
+
+    <!-- 속성 선택자 -->
+    <input type="text" placeholder="Type here">
+    <a href="https://example.com">Link</a>
+
+    <!-- 구조적 가상 클래스 선택자 -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- 비어 있는 선택자 -->
+    <p></p>
+
+    <!-- 목적지 선택자 -->
+    <div id="section">This is a section</div>
+    <a href="#section">Go to Section</a>
+
+    <!-- 활성화된 선택자 -->
+    <input type="text" value="Enabled Input">
+
+    <!-- 비활성화된 선택자 -->
+    <input type="text" value="Disabled Input" disabled>
+
+    <!-- 체크된 선택자 -->
+    <input type="checkbox" checked> Checked
+
+    <!-- 인접 형제 선택자 -->
+    <h2>Heading</h2>
+    <p>Paragraph</p>
 </body>
 </html>
