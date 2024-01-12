@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Example</title>
+</head>
+<body>
+
+<form action="/submit_form" method="get">
+  <!-- Input for Username -->
+  <label for="username">사용자명:</label>
+  <input type="text" id="username" name="username" placeholder="사용자명" required>
+  <br>
+
+  <!-- Textarea for Message -->
+  <label for="message">메시지:</label>
+  <textarea id="message" name="message" placeholder="메시지를 입력하세요" rows="4" cols="50" required></textarea>
+  <br>
+
+  <!-- Select for Country -->
+  <label for="country">국가:</label>
+  <select id="country" name="country">
+    <option value="korea">대한민국</option>
+    <option value="usa">미국</option>
+    <option value="canada">캐나다</option>
+    <option value="japan">일본</option>
+  </select>
+  <br>
+
+  <!-- Submit Button -->
+  <input type="submit" value="제출">
+</form>
+
+</body>
+</html>
