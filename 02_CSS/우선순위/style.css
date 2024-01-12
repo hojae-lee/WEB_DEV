@@ -1,0 +1,20 @@
+#special-box {
+    color: blue; /* ID 선택자, 우선순위: 100 */
+}
+
+.highlight {
+    color: green; /* 클래스 선택자, 우선순위: 10 */
+}
+
+div {
+    color: red; /* 태그 선택자, 우선순위: 1 */
+}
+
+* {
+    color: gray; /* 전체 선택자, 우선순위: 0 */
+}
+
+/* 인라인 스타일 */
+#special-box {
+    color: orange !important; /* !important, 우선순위: infinity */
+}
