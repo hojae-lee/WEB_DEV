@@ -1,0 +1,260 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>쇼핑몰 - 상품 조회</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../img/logo.png" alt="logo" />
+        <h1>쇼핑몰 이름</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">홈</a></li>
+          <li><a href="#">상품 등록</a></li>
+          <li><a href="#">장바구니</a></li>
+          <li><a href="#">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h2>쇼핑몰 소개</h2>
+        <p>
+          쇼핑몰은 고객들에게 최상의 서비스를 제공합니다. 다양한 상품을
+          만나보세요.
+        </p>
+      </section>
+      <div class="container">
+        <!-- <div class="item">
+          <img src="../img/product1.png" alt="상품1" />
+          <h3>상품 1</h3>
+          <p>가격: $10</p>
+        </div>
+        <div class="item">
+          <img src="../img/product2.png" alt="상품2" />
+          <h3>상품 2</h3>
+          <p>가격: $15</p>
+        </div>
+        <div class="item">
+          <img src="../img/product3.png" alt="상품3" />
+          <h3>상품 3</h3>
+          <p>가격: $20</p>
+        </div> -->
+      </div>
+    </main>
+    <script>
+      // 우리가 Response 로 받은 응답 데이터.
+      var products = [
+        { name: "상품 1", price: "$10", image: "../img/product1.png" },
+        { name: "상품 2", price: "$15", image: "../img/product2.png" },
+        { name: "상품 3", price: "$20", image: "../img/product3.png" },
+      ];
+
+      // 첫 페이지 로드 시 상품 조회가 되게끔 할거에요.
+      window.addEventListener("load", function () {
+        var container = document.querySelector(".container");
+
+        // 상품 정보 배열을 순회하며 상품 요소 생성
+        for (var i = 0; i < products.length; i++) {
+          var product = products[i];
+
+          // createElement -> 요소를 만드는 함수
+          // div 요소를 만든다.
+          var item = document.createElement("div");
+          // item class 를 추가해준다.
+          item.classList.add("item");
+
+          // img 요소를 만든다.
+          var img = document.createElement("img");
+          // img 에 src 를 설정해준다.
+          img.src = product.image;
+          // img 에 alt 를 설정해준다.
+          img.alt = product.name;
+
+          // h3 요소를 만든다.
+          var name = document.createElement("h3");
+          // h3 요소에 textContent 를 이용해서 텍스트를 넣는다.
+          name.textContent = product.name;
+
+          // p 요소를 만든다.
+          var price = document.createElement("p");
+          // p 요소에 textContent 를 이용해서 텍스트를 넣는다.
+          price.textContent = "가격: " + product.price;
+
+          // appendChild 를 이용해서 위에서 만든 요소를 div 밑에 넣는거에요.
+          // div > img, name, price
+          item.appendChild(img);
+          item.appendChild(name);
+          item.appendChild(price);
+
+          // item 요소를 container 요소에 넣어준다.
+          container.appendChild(item);
+        }
+      });
+    </script>
+  </body>
+</html>
+```
+
+```css
+/* 기본 스타일 */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 20px;
+}
+
+.item {
+  width: 25%;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 576px) {
+  .item {
+    width: 100%;
+  }
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  display: inline;
+  font-size: 24px;
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav ul li:first-child {
+  margin-left: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  color: #555;
+}
+
+/* 소개 섹션 스타일 */
+.intro {
+  background-color: #f9f9f9;
+  padding: 40px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* 상품 등록 */
+.register {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.register h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.register form {
+  text-align: left;
+}
+
+.register label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.register input[type="text"],
+.register input[type="number"],
+.register input[type="url"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.register button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register button:hover {
+  background-color: #45a049;
+}
+
+.register button:focus {
+  outline: none;
+}
+
+```
