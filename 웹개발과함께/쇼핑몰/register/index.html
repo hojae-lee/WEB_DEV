@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>반응형 쇼핑몰 - 상품 생성</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../img/logo.png" alt="logo" />
+        <h1>쇼핑몰 이름</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="../home/index.html">홈</a></li>
+          <li><a href="#">상품 등록</a></li>
+          <li><a href="#">장바구니</a></li>
+          <li><a href="#">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="register">
+        <h2>상품 등록</h2>
+        <form id="productForm">
+          <label for="productName">상품 이름:</label>
+          <input type="text" id="productName" name="productName" required />
+          <br />
+          <label for="productPrice">가격:</label>
+          <input type="number" id="productPrice" name="productPrice" required />
+          <br />
+          <label for="productImage">이미지 URL:</label>
+          <input type="text" id="productImage" name="productImage" required />
+          <br />
+          <button type="submit">상품 등록</button>
+        </form>
+      </section>
+    </main>
+    <script src="../assets/js/api.js"></script>
+    <script>
+      var products = getProducts();
+      // 상품 등록 폼
+      var productForm = document.getElementById("productForm");
+
+      // 상품 등록 이벤트 처리
+      productForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // 기본 제출 이벤트 방지
+
+        // 입력된 정보 가져오기
+        var productName = document.getElementById("productName").value;
+        var productPrice = document.getElementById("productPrice").value;
+        var productImage = document.getElementById("productImage").value;
+
+        // 새로운 상품 객체 생성
+        var newProduct = {
+          name: productName,
+          price: productPrice,
+          image: productImage,
+          index: products.length,
+        };
+
+        products.push(newProduct);
+
+        localStorage.setItem("products", JSON.stringify(products));
+
+        alert("상품이 등록되었습니다.");
+
+        // 입력 필드 초기화
+        productForm.reset();
+      });
+    </script>
+  </body>
+</html>
