@@ -59,9 +59,10 @@
         var container = document.querySelector(".container");
 
         // 상품 조회
-        document.getElementById("productName").value;
-        document.getElementById("productPrice").value;
-        document.getElementById("productImage").value;
+        var { name, price, image, index } = products[id];
+        document.getElementById("productName").value = name;
+        document.getElementById("productPrice").value = price;
+        document.getElementById("productImage").value = image;
 
         // 상품 정보 배열을 순회하며 상품 요소 생성
         // 상품 등록 폼
