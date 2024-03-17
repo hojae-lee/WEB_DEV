@@ -9,6 +9,17 @@
 - 일반적으로 이 기술을 쉽게 사용하기 위해 Jquery 를 이용하여 Ajax 를 활용하기도 합니다.
 
 ```js
+// xmlhttprequest
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+if (this.readyState == 4 && this.status == 200) {
+  var response = JSON.parse(this.responseText);
+  console.log(response);
+}
+};
+xhttp.open("GET", "https://jsonplaceholder.typicode.com/todos/1", true);
+xhttp.send();
+
 // jQuery의 .get 메소드 사용
 $.ajax({
     url: "https://jsonplaceholder.typicode.com/todos/1",
