@@ -8,12 +8,11 @@
 
 ## yarn 설치
 
-```
+```bash
 npm install yarn --global
 ```
 
 ## 명령어
-
 
 ```bash
 // 설치
