@@ -24,6 +24,8 @@ useEffect(() => {
 }, []);
 ```
 
+### dom 접근 예제
+
 ```js
 import { useState, useEffect } from "react";
 
