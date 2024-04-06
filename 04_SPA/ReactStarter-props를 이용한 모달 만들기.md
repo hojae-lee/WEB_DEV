@@ -17,9 +17,9 @@ const Modal = (props) => {
     <>
       {props.open && (
         <div className="modal">
-          <h4>{modalTitle}</h4>
-          <p>{modalDate}</p>
-          <p>{modalContent}</p>
+          <h4>{props.modalTitle}</h4>
+          <p>{props.modalDate}</p>
+          <p>{props.modalContent}</p>
         </div>
       )}
     </>
